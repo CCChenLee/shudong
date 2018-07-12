@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../test/css/comment_style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../comment_style.css">
+    <script src="../jquery-3.2.1.min.js"></script>
     <script>
         function post() {
             var comment = document.forms["myForm"]["fcomment"].value
@@ -51,10 +51,10 @@ function post()
         </form>
         <div id="all_comments">
             <?php
-    $host="localhost";
-    $username="root";
-    $password="";
-    $databasename="testdb";
+    $host='mysql:host=localhost;dbname=testdb';
+    $username='bookorama';
+    $password='bookorama123';
+    $databasename='testdb';
 
 //   $connect=mysql_connect($host,$username,$password);
 //    if (!$connect) {
@@ -65,8 +65,11 @@ function post()
 //    die ('Can\'t use testdb : ' . mysql_error());
 //}     
 //    $comm = mysql_query('SELECT name FROM `comments`');
-      
-$dbo = new PDO("mysql:host=localhost;dbname=testdb", "root", "");
+try{
+    $dbo = new PDO($host,$username,$password);
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}    
 // Construct a query
 $query = "SELECT * FROM comments";
 // Send the query

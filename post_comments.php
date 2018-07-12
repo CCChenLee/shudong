@@ -1,9 +1,9 @@
 <?php
-$host="localhost";
-$username="root";
-$password="";
-$databasename="testdb";
-$link = new PDO("mysql:host=localhost;dbname=testdb", "root", "");
+$host='mysql:dbname=testdb;host=localhost';
+$username='bookorama';
+$password='bookorama123';
+$databasename='testdb';
+$link = new PDO($host,$username,$password);
  if (!$link) {
     die('Not connected : ' . mysql_error());
  }     
