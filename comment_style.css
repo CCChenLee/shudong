@@ -1,8 +1,16 @@
 body
 {
-    text-align:center;
+    background:url(header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align:left;
     font-family:helvetica;
-    background-color:#A9D0F5;
+    /*background-color:#A9D0F5;*/
 }
 h1
 {
@@ -46,7 +54,8 @@ input[type="submit"]
 {
     width:500px;
     background-color:white;
-    margin:auto;    
+    margin-top:10px;
+    text-align:left;
 }
 .comment_div .name
 {
@@ -56,12 +65,10 @@ input[type="submit"]
     background-color:grey;
     color:white;
     text-align:left;
-   
 }
 .comment_div .comment
 {
     padding:10px;
-    text-align:left;
 }
 .comment_div .time
 {

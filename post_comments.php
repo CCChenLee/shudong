@@ -1,7 +1,7 @@
 <?php
-$host='mysql:dbname=testdb;host=localhost';
-$username='bookorama';
-$password='bookorama123';
+$host='mysql:host=localhost;dbname=testdb';
+$username='root';
+$password='123456';
 $databasename='testdb';
 $link = new PDO($host,$username,$password);
  if (!$link) {
@@ -13,8 +13,28 @@ if(isset($_POST['user_comm']) && isset($_POST['user_name']) )
   $statement->bindParam(':name',$_POST['user_name']);
   $statement->bindParam(':comment',$_POST['user_comm']);
   $statement->execute();  
+if($row = $qresult->fetch(PDO::FETCH_ASSOC))
+{
+	$name=$row['name'];
+      $comment=$row['comment'];
+      $time=$row['post_time'];
+      ?>
+                <div class="comment_div">
+                    <p class="name">大富大贵之人：
+                        <?php echo $name;?>
+                    </p>
+                    <p class="comment">留言板：
+                        <?php echo $comment;?>
+                    </p>
+                    <p class="time">发表时间：
+                        <?php echo $time;?>
+                    </p>
+                </div>
+    <?php
+	}
+exit;
 }
 // Step 5: Free used resources
 //$statement->closeCursor();
 //$link = null;
- ?>
+?>
