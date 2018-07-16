@@ -1,6 +1,6 @@
 body
 {
-    background:url(../img/header-bg.jpg);
+    /*background:url(../img/header-bg.jpg);*/
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -10,7 +10,7 @@ body
     background-size: cover;
     text-align:left;
     font-family:helvetica;
-    /*background-color:#A9D0F5;*/
+    background-color:#FFFFFF;
 }
 h1
 {
@@ -44,7 +44,7 @@ input[type="submit"]
     width:150px;
     height:40px;
     border:none;
-    background-color:#2E64FE;
+    background-color:green;
     color:white;
     margin-top:10px;
     border-radius:5px;
