@@ -2,7 +2,7 @@
 <html>
 <head> 
     <meta charset="utf-8">
-    <link rel="icon" type="img/x-icon" href="/img/favicon.ico" />
+    <link rel="icon" type="img/x-icon" href="img/favicon.ico" />
     <title>树洞</title>
     <link rel="stylesheet" type="text/css" href="code/comment_style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -59,6 +59,8 @@
                 <input type="text" id="username" name="fname" placeholder="您贵姓？">
                 <br>
                 <input id="submit" type="submit" value="匿名发送">
+                <br>
+                <a href="#end" style="color: white">直达底部</a>
             </form>
         </td>
     </table>
@@ -80,13 +82,13 @@
             $time=$row['post_time'];
         ?>
         <div class="comment_div">
-            <p class="name">大富大贵之人：
+            <p class="name">匿名访客：
                 <?php echo htmlspecialchars($name,ENT_NOQUOTES,"UTF-8");?>
             </p>
-            <p class="comment">留言板：
+            <p class="comment">留言内容：
                 <?php echo htmlspecialchars($comment,ENT_NOQUOTES,"UTF-8");?>
             </p>
-            <p class="time">发表时间：
+            <p class="time">发送时间：
                 <?php echo $time;?>
             </p>
         </div>
@@ -94,6 +96,8 @@
             }
         ?>
         </div>
+        <a name="end"></a>
+        <a href="#" style="color: #606060">回到顶部</a>
     </div>
 </body>
 </html>
