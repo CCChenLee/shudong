@@ -60,7 +60,7 @@
                 <br>
                 <input id="submit" type="submit" value="匿名发送">
                 <br>
-                <a href="#end" style="color: white">直达底部</a>
+                <a href="#end" style="color: black">直达底部</a>
             </form>
         </td>
     </table>
@@ -97,7 +97,8 @@
         ?>
         </div>
         <a name="end"></a>
-        <a href="#" style="color: #606060">回到顶部</a>
+        <a href="#" style="color: black">回到顶部</a>
     </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 </body>
 </html>
