@@ -54,11 +54,11 @@
 
         <td style="padding-left:180px">
             <form name="myForm" method="post" action="" onsubmit="return post()">
-                <textarea id="comment" name="fcomment" placeholder="我想匿名对你说..."></textarea>
+                <textarea id="comment" name="fcomment" placeholder="来点土味情话吧~"></textarea>
                 <br>
-                <input type="text" id="username" name="fname" placeholder="您贵姓？">
+                <input type="text" id="username" name="fname" placeholder="贵姓？">
                 <br>
-                <input id="submit" type="submit" value="匿名发送">
+                <input id="submit" type="submit" value="匿名发表">
                 <br>
                 <a href="#end" style="color: black">直达底部</a>
             </form>
@@ -77,18 +77,19 @@
             // var_dump($qresult);
             while($row = $qresult->fetch(PDO::FETCH_ASSOC)) {
             //$result[] = $row;
+            $id=$row['id'];
             $name=$row['name'];
             $comment=$row['comment'];
             $time=$row['post_time'];
         ?>
         <div class="comment_div">
-            <p class="name">匿名访客：
-                <?php echo htmlspecialchars($name,ENT_NOQUOTES,"UTF-8");?>
+            <p class="name">
+                <?php echo "第".$id."位匿名访客：".htmlspecialchars($name,ENT_NOQUOTES,"UTF-8");?>
             </p>
             <p class="comment">留言内容：
                 <?php echo htmlspecialchars($comment,ENT_NOQUOTES,"UTF-8");?>
             </p>
-            <p class="time">发送时间：
+            <p class="time">发表时间：
                 <?php echo $time;?>
             </p>
         </div>
